@@ -1,0 +1,299 @@
+/* ─────────────────────────────────────────────────────────
+   Tiez Aide — Tweak variations
+   Three knobs that reshape the feel of the design:
+   • palette  → color mood
+   • voice    → typographic personality
+   • density  → spacing rhythm
+   ───────────────────────────────────────────────────────── */
+
+/* ============ PALETTE ============ */
+
+/* Bretagne — default (defined in styles.css). Re-stated for clarity. */
+body[data-palette="bretagne"] {
+  --primary:   #2E5B8A;
+  --primary-d: #244a72;
+  --primary-l: #EAF1F8;
+  --green:     #4A9B6F;
+  --green-d:   #3a7e59;
+  --green-l:   #E8F2EC;
+  --accent:    #E8845A;
+  --accent-l:  #FCEDE4;
+}
+
+/* Terre cuite — warm clay, ochre, deep teal accent.
+   The whole site feels artisan-Mediterranean. */
+body[data-palette="terre"] {
+  --primary:   #8B4A3A;
+  --primary-d: #6e3a2d;
+  --primary-l: #F4E6E0;
+  --green:     #C99454;   /* "secondary" reads as ochre */
+  --green-d:   #9f7438;
+  --green-l:   #F7EEDD;
+  --accent:    #4F7A75;   /* deep teal accent */
+  --accent-l:  #E0EDEB;
+  --bg-soft:   #FAF6F1;
+  --line:      #ECE3DA;
+}
+
+/* Ardoise — cool slate, sage, mustard accent. Quiet, north-european. */
+body[data-palette="ardoise"] {
+  --primary:   #3D4F66;
+  --primary-d: #2D3A4D;
+  --primary-l: #E7EBF1;
+  --green:     #6B8E6E;
+  --green-d:   #4F7053;
+  --green-l:   #E8EFE8;
+  --accent:    #B8923C;
+  --accent-l:  #F4ECD6;
+  --bg-soft:   #F4F5F7;
+  --line:      #E3E6EB;
+}
+
+/* Footer stays light — the brand mark is on a white background. */
+
+/* Hero illustration recolors with palette */
+body[data-palette="terre"] .hero__svg path[stroke="#2E5B8A"],
+body[data-palette="terre"] .hero__svg circle[fill="#F4F1EC"] + .nothing {} /* keep noop */
+body[data-palette="terre"] .hero__svg g[stroke="#2E5B8A"] { stroke: var(--primary); }
+body[data-palette="terre"] .hero__svg g[fill="#4A9B6F"]   { fill:   var(--green); }
+body[data-palette="terre"] .hero__svg path[stroke="#4A9B6F"] { stroke: var(--green); }
+body[data-palette="terre"] .hero__svg path[fill="#4A9B6F"]   { fill:   var(--green); }
+body[data-palette="terre"] .hero__svg g[transform="translate(80 410)"] { stroke: var(--primary) !important; }
+
+body[data-palette="ardoise"] .hero__svg g[stroke="#2E5B8A"] { stroke: var(--primary); }
+body[data-palette="ardoise"] .hero__svg g[fill="#4A9B6F"]   { fill:   var(--green); }
+body[data-palette="ardoise"] .hero__svg path[stroke="#4A9B6F"] { stroke: var(--green); }
+body[data-palette="ardoise"] .hero__svg path[fill="#4A9B6F"]   { fill:   var(--green); }
+
+/* Triskele/house/wordmark in the LOGO symbols are referenced via <use>;
+   their colors are baked into the <symbol>. We tint by overlaying a CSS filter
+   only when not Bretagne — chosen because the symbols use hard-coded fills.
+   Cleanest: leave logo blue/green (brand) intact across palettes — palette
+   reshapes the SITE, not the brand mark. That's the right call. */
+
+
+/* ============ VOICE (typography personality) ============ */
+
+/* Editorial — default. Playfair Display headings (defined in styles.css). */
+
+/* Moderne — single typeface (Inter), no serif anywhere.
+   Headings get heavier weight + tighter tracking. Feels confident, contemporary. */
+body[data-voice="moderne"] {
+  --serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+body[data-voice="moderne"] .display,
+body[data-voice="moderne"] .h2,
+body[data-voice="moderne"] .h3,
+body[data-voice="moderne"] .card__title,
+body[data-voice="moderne"] .price__name,
+body[data-voice="moderne"] .footer__col h4 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+body[data-voice="moderne"] .display { font-weight: 800; }
+body[data-voice="moderne"] .display em,
+body[data-voice="moderne"] .h2 em {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--primary);
+}
+body[data-voice="moderne"] .quote blockquote { font-style: normal; font-family: var(--sans); font-weight: 500; }
+body[data-voice="moderne"] .footer__slogan { font-style: normal; font-family: var(--sans); font-weight: 600; }
+body[data-voice="moderne"] .stat dt { font-family: var(--sans); }
+body[data-voice="moderne"] .price__amount { font-family: var(--sans); }
+body[data-voice="moderne"] .form__success strong { font-family: var(--sans); }
+
+/* Affiche — display serif (Fraunces with optical sizing) sized up.
+   The page reads like a magazine cover: bold headlines, soft warmth. */
+body[data-voice="affiche"] {
+  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+}
+body[data-voice="affiche"] .display {
+  font-size: clamp(46px, 6.4vw, 84px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-variation-settings: "opsz" 144;
+}
+body[data-voice="affiche"] .h2 {
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 700;
+  font-variation-settings: "opsz" 96;
+}
+body[data-voice="affiche"] .h3,
+body[data-voice="affiche"] .card__title,
+body[data-voice="affiche"] .price__name {
+  font-variation-settings: "opsz" 48;
+}
+body[data-voice="affiche"] .display em,
+body[data-voice="affiche"] .h2 em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+
+/* ============ DENSITY (spacing rhythm) ============ */
+
+/* Aéré — default values in styles.css */
+
+/* Standard — balanced */
+body[data-density="standard"] {
+  --pad-section: clamp(56px, 7vw, 100px);
+}
+body[data-density="standard"] .section__head { margin-bottom: 48px; }
+body[data-density="standard"] .scams { margin-top: 56px; padding: 30px 32px; }
+body[data-density="standard"] .taxnote { margin-top: 32px; }
+body[data-density="standard"] .hero { padding: clamp(40px, 6vw, 72px) 0 var(--pad-section); }
+body[data-density="standard"] .hero__cta { margin: 8px 0 36px; }
+body[data-density="standard"] .stats { padding-top: 20px; }
+body[data-density="standard"] .card { padding: 26px 24px; }
+body[data-density="standard"] .price { padding: 28px 26px; gap: 18px; }
+
+/* Compact — denser, magazine-grid feel */
+body[data-density="compact"] {
+  --pad-section: clamp(36px, 5vw, 72px);
+}
+body[data-density="compact"] .display { font-size: clamp(34px, 4.6vw, 54px); }
+body[data-density="compact"] .h2 { font-size: clamp(26px, 3vw, 38px); }
+body[data-density="compact"] .lede { font-size: 16px; }
+body[data-density="compact"] .section__head { margin-bottom: 36px; }
+body[data-density="compact"] .scams { margin-top: 40px; padding: 24px 26px; }
+body[data-density="compact"] .scams__head { margin-bottom: 14px; padding-bottom: 14px; }
+body[data-density="compact"] .scams__list { gap: 10px 24px; }
+body[data-density="compact"] .taxnote { margin-top: 24px; padding: 14px 18px; }
+body[data-density="compact"] .hero { padding: clamp(28px, 4vw, 56px) 0 var(--pad-section); }
+body[data-density="compact"] .hero__cta { margin: 6px 0 28px; }
+body[data-density="compact"] .stats { padding-top: 16px; }
+body[data-density="compact"] .stat dt { font-size: clamp(28px, 2.8vw, 36px); }
+body[data-density="compact"] .card { padding: 22px 20px; }
+body[data-density="compact"] .card__icon { margin-bottom: 14px; padding: 10px; }
+body[data-density="compact"] .cards { gap: 16px; }
+body[data-density="compact"] .price { padding: 24px 22px; gap: 16px; }
+body[data-density="compact"] .price__amount { font-size: 44px; }
+body[data-density="compact"] .form { padding: 26px; gap: 14px; }
+body[data-density="compact"] .footer { padding: 56px 0 24px; }
+body[data-density="compact"] .footer__grid { gap: 32px; padding-bottom: 36px; }
+
+
+/* ─────────────────────────────────────────────────────────
+   PANEL UI
+   ───────────────────────────────────────────────────────── */
+.tw-panel {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  z-index: 1000;
+  width: 320px;
+  background: #fff;
+  border: 1px solid #E8ECF0;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px -20px rgba(26,26,46,.25), 0 6px 16px -8px rgba(26,26,46,.12);
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1A1A2E;
+  opacity: 0;
+  transform: translateY(12px) scale(.98);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  overflow: hidden;
+}
+.tw-panel.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.tw-panel__head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid #F1F3F6;
+  background: #FBFCFD;
+}
+.tw-panel__title {
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: #1A1A2E;
+}
+.tw-panel__close {
+  width: 28px; height: 28px;
+  border: none; background: transparent;
+  cursor: pointer; border-radius: 6px;
+  color: #6B7280;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 18px; line-height: 1;
+}
+.tw-panel__close:hover { background: #F1F3F6; color: #1A1A2E; }
+.tw-panel__body { padding: 14px 18px 18px; }
+
+.tw-group { margin-top: 14px; }
+.tw-group:first-child { margin-top: 0; }
+.tw-group__label {
+  display: flex; align-items: baseline; justify-content: space-between;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #6B7280;
+  margin-bottom: 8px;
+}
+.tw-group__hint {
+  font-size: 11px; font-weight: 500;
+  color: #9AA3B2; text-transform: none; letter-spacing: 0.01em;
+}
+.tw-segs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  background: #F4F6F9;
+  padding: 4px;
+  border-radius: 10px;
+}
+.tw-seg {
+  border: none; background: transparent; cursor: pointer;
+  padding: 8px 6px;
+  font: 600 12px/1.2 "Inter", system-ui, sans-serif;
+  color: #4B5366;
+  border-radius: 7px;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+  display: flex; flex-direction: column; align-items: center; gap: 5px;
+}
+.tw-seg:hover { color: #1A1A2E; }
+.tw-seg[aria-pressed="true"] {
+  background: #fff;
+  color: #1A1A2E;
+  box-shadow: 0 1px 2px rgba(26,26,46,.06), 0 0 0 1px rgba(26,26,46,.06);
+}
+
+/* swatch dots inside palette segments */
+.tw-swatch {
+  display: inline-flex; gap: 3px;
+}
+.tw-swatch i {
+  width: 10px; height: 10px; border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.06) inset;
+}
+
+/* type preview inside voice segments */
+.tw-type {
+  font-size: 14px; line-height: 1; letter-spacing: -0.01em;
+  color: #1A1A2E;
+}
+.tw-type--editorial { font-family: "Playfair Display", serif; font-weight: 600; font-style: italic; }
+.tw-type--moderne   { font-family: "Inter", system-ui, sans-serif; font-weight: 800; letter-spacing: -0.04em; }
+.tw-type--affiche   { font-family: "Fraunces", serif; font-weight: 700; font-variation-settings: "opsz" 144; }
+
+/* density preview bars */
+.tw-bars { display: flex; flex-direction: column; gap: 2px; align-items: center; }
+.tw-bars i {
+  display: block;
+  background: currentColor;
+  border-radius: 1px;
+}
+.tw-bars--aere i      { width: 18px; height: 2px; }
+.tw-bars--aere i + i  { margin-top: 4px; }
+.tw-bars--standard i  { width: 18px; height: 2px; }
+.tw-bars--standard i + i { margin-top: 2px; }
+.tw-bars--compact i   { width: 18px; height: 2px; }
+.tw-bars--compact i + i { margin-top: 1px; }
+
+@media (max-width: 640px) {
+  .tw-panel {
+    left: 12px; right: 12px; bottom: 12px;
+    width: auto;
+  }
+}

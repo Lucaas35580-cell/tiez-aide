@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tiez Aide · Aide à domicile en Bretagne</title>
+<meta name="description" content="Aide à domicile et accompagnement numérique en Bretagne. Petits travaux, jardinage, ménage, courses, démarches en ligne. Devis gratuit sous 24h." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="tweaks.css" />
+
+<script>
+window.__TWEAKS_DEFAULTS__ = /*EDITMODE-BEGIN*/{
+  "palette": "bretagne",
+  "voice": "editorial",
+  "density": "standard"
+}/*EDITMODE-END*/;
+</script>
+</head>
+<body>
+
+<!-- ─────────────────── NAVBAR ─────────────────── -->
+<header class="nav" id="nav" data-screen-label="Navbar">
+  <div class="container nav__row">
+    <a href="#top" class="nav__brand" aria-label="Tiez Aide · accueil">
+      <img src="assets/logo-tiez-aide.png" alt="Tiez Aide · Aide à domicile en Bretagne" class="logo logo--mark" />
+    </a>
+
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#numerique">Numérique</a>
+      <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#comment">Comment ça se passe</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav__cta">
+      <a href="tel:+33648121921" class="btn btn--ghost">
+        <i data-lucide="phone" aria-hidden="true"></i>
+        <span>Appeler</span>
+      </a>
+      <button type="button" class="btn btn--primary" data-devis>Devis gratuit</button>
+    </div>
+
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <i data-lucide="menu" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="nav__mobile" id="navMobile" hidden>
+    <a href="#numerique">Numérique</a>
+    <a href="#services">Services</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#comment">Comment ça se passe</a>
+    <a href="#contact">Contact</a>
+    <div class="nav__mobile-cta">
+      <a href="tel:+33648121921" class="btn btn--ghost btn--block">
+        <i data-lucide="phone"></i><span>Appeler</span>
+      </a>
+      <button type="button" class="btn btn--primary btn--block" data-devis>Devis gratuit</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ─────────────────── HERO ─────────────────── -->
+<section class="hero" data-screen-label="Hero">
+  <div class="hero__grain" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy reveal">
+      <span class="badge badge--green">
+        <span class="dot"></span>
+        Nouveau · Service local breton
+      </span>
+      <h1 class="display">
+        Le numérique sans stress.<br /><em>La maison entre de bonnes mains.</em>
+      </h1>
+      <p class="lede">
+        Notre priorité&nbsp;: un accompagnement numérique chaleureux, sans jugement,
+        chez vous. Et toute l'aide à domicile dont vous avez besoin,
+        partout en Bretagne&nbsp;: Finistère, Ille-et-Vilaine, Morbihan, Côtes-d'Armor.
+      </p>
+      <div class="hero__cta">
+        <button type="button" class="btn btn--primary btn--lg" data-devis>
+          Demander un devis
+          <i data-lucide="arrow-right" aria-hidden="true"></i>
+        </button>
+        <a href="#numerique" class="btn btn--ghost btn--lg">Découvrir les services</a>
+      </div>
+
+      <dl class="stats">
+        <div class="stat">
+          <dt><span class="count" data-to="4">0</span></dt>
+          <dd>départements<br />29 · 35 · 56 · 22</dd>
+        </div>
+        <div class="stat">
+          <dt><span class="count" data-to="24">0</span><span class="stat__suffix">h</span></dt>
+          <dd>pour un devis<br />gratuit</dd>
+        </div>
+        <div class="stat">
+          <dt><span>−</span><span class="count" data-to="50">0</span><span class="stat__suffix">%</span></dt>
+          <dd>crédit d'impôt<br />services à domicile</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="hero__art reveal" aria-label="Accompagnement numérique à domicile">
+      <div class="hero__photo">
+        <img src="assets/photo-accompagnement.png"
+             alt="Séance d'accompagnement numérique : un intervenant Tiez Aide explique l'usage d'un ordinateur portable à une dame âgée, autour d'un café." />
+        <span class="hero__photo-badge">
+          <i data-lucide="smartphone" aria-hidden="true"></i>
+          Accompagnement numérique à domicile
+        </span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ─────────────────── BANDEAU CONFIANCE ─────────────────── -->
+<section class="trust" aria-label="Garanties" data-screen-label="Confiance">
+  <div class="container trust__row">
+    <div class="trust__item reveal">
+      <i data-lucide="shield" aria-hidden="true"></i>
+      <span>Intervenants vérifiés &amp; assurés</span>
+    </div>
+    <div class="trust__item reveal">
+      <i data-lucide="clock" aria-hidden="true"></i>
+      <span>Devis gratuit sous 24&nbsp;h</span>
+    </div>
+    <div class="trust__item reveal">
+      <i data-lucide="star" aria-hidden="true"></i>
+      <span>Satisfaction garantie</span>
+    </div>
+    <div class="trust__item reveal">
+      <i data-lucide="map-pin" aria-hidden="true"></i>
+      <span>Service local breton</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── NUMÉRIQUE (priorité) ─────────────────── -->
+<section class="section" id="numerique" data-screen-label="Numérique">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Notre priorité</span>
+      <h2 class="h2">Le numérique <em>sans stress</em>.</h2>
+      <p class="lede lede--center">
+        À votre rythme, dans votre salon, sans jargon. On démystifie
+        les écrans pour qu'ils redeviennent utiles, et sûrs.
+        C'est par là que nous commençons.
+      </p>
+    </header>
+
+    <div class="cards cards--4">
+      <article class="card card--digital reveal">
+        <i data-lucide="smartphone" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Prise en main de vos appareils</h3>
+        <p>Smartphone, tablette, ordinateur · à votre rythme, chez vous, sans jugement.</p>
+      </article>
+      <article class="card card--digital reveal">
+        <i data-lucide="shield" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Protection contre les arnaques</h3>
+        <p>Faux supports, phishing, SMS frauduleux · apprenez à reconnaître les pièges.</p>
+      </article>
+      <article class="card card--digital reveal">
+        <i data-lucide="globe" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Démarches administratives en ligne</h3>
+        <p>Ameli, impots.gouv, CAF, rendez-vous médicaux · accompagnement pas à pas.</p>
+      </article>
+      <article class="card card--digital reveal">
+        <i data-lucide="users" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Rester connecté à sa famille</h3>
+        <p>Visio, photos, messagerie · restez proche de ceux que vous aimez.</p>
+      </article>
+    </div>
+
+    <!-- Arnaques courantes -->
+    <div class="scams reveal">
+      <header class="scams__head">
+        <i data-lucide="alert-triangle" aria-hidden="true"></i>
+        <div>
+          <h3 class="h3">Arnaques courantes · à reconnaître</h3>
+          <p>Si vous recevez l'un de ces messages, ne cliquez pas. Appelez-nous.</p>
+        </div>
+      </header>
+      <ul class="scams__list">
+        <li>
+          <i data-lucide="alert-triangle" aria-hidden="true"></i>
+          <div><strong>Faux support technique.</strong> Un appel ou un pop-up prétend que votre ordinateur est infecté.</div>
+        </li>
+        <li>
+          <i data-lucide="alert-triangle" aria-hidden="true"></i>
+          <div><strong>SMS «&nbsp;votre colis est bloqué&nbsp;».</strong> Un lien vous demande une petite somme pour le débloquer.</div>
+        </li>
+        <li>
+          <i data-lucide="alert-triangle" aria-hidden="true"></i>
+          <div><strong>Email «&nbsp;compte bancaire suspendu&nbsp;».</strong> On vous demande vos identifiants par un faux site.</div>
+        </li>
+        <li>
+          <i data-lucide="alert-triangle" aria-hidden="true"></i>
+          <div><strong>Appel «&nbsp;vous avez gagné un prix&nbsp;».</strong> On réclame un paiement pour libérer le lot.</div>
+        </li>
+        <li>
+          <i data-lucide="alert-triangle" aria-hidden="true"></i>
+          <div><strong>Faux site administratif.</strong> Imitations d'impots.gouv, Ameli ou CAF qui collectent vos données.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── SERVICES ─────────────────── -->
+<section class="section section--soft" id="services" data-screen-label="Services">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Aussi à votre service</span>
+      <h2 class="h2">Et toute l'aide à domicile, <em>chez vous</em>.</h2>
+      <p class="lede lede--center">
+        Six familles d'interventions pensées pour le quotidien, assurées
+        par des intervenants formés et de confiance.
+      </p>
+    </header>
+
+    <div class="cards">
+      <article class="card card--service reveal">
+        <i data-lucide="wrench" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Petits travaux &amp; bricolage</h3>
+        <p>Étagère à fixer, robinet qui fuit, ampoule en hauteur. On s'en occupe.</p>
+      </article>
+      <article class="card card--service reveal">
+        <i data-lucide="leaf" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Jardinage &amp; entretien</h3>
+        <p>Tonte, taille, désherbage, ramassage des feuilles. Extérieur soigné toute l'année.</p>
+      </article>
+      <article class="card card--service reveal">
+        <i data-lucide="shopping-bag" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Courses &amp; accompagnement</h3>
+        <p>Listes hebdomadaires, transport au marché, rendez-vous médicaux.</p>
+      </article>
+      <article class="card card--service reveal">
+        <i data-lucide="home" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Nettoyage &amp; ménage</h3>
+        <p>Entretien régulier ou ponctuel, repassage, grand nettoyage de saison.</p>
+      </article>
+      <article class="card card--service reveal">
+        <i data-lucide="key" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Garde de domicile</h3>
+        <p>Pendant vos vacances : arrosage, courrier, ouverture des volets, présence rassurante.</p>
+      </article>
+      <article class="card card--service reveal">
+        <i data-lucide="file-text" class="card__icon" aria-hidden="true"></i>
+        <h3 class="card__title">Aide administrative</h3>
+        <p>Tri du courrier, dossiers, rendez-vous en ligne, suivi des démarches.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── TARIFS ─────────────────── -->
+<section class="section" id="tarifs" data-screen-label="Tarifs">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Tarifs</span>
+      <h2 class="h2">Simple, lisible, <em>sans surprise</em>.</h2>
+      <p class="lede lede--center">
+        Deux offres au tarif horaire. Vous ne payez que le temps passé.
+      </p>
+    </header>
+
+    <div class="pricing pricing--two">
+      <article class="price price--featured reveal">
+        <span class="price__badge">Notre priorité</span>
+        <header class="price__head">
+          <span class="price__icon"><i data-lucide="smartphone" aria-hidden="true"></i></span>
+          <h3 class="price__name">Accompagnement numérique</h3>
+          <p class="price__amount"><span>25</span><em>€/h</em></p>
+        </header>
+        <ul class="price__list">
+          <li><i data-lucide="check" aria-hidden="true"></i> Prise en main de vos appareils</li>
+          <li><i data-lucide="check" aria-hidden="true"></i> Protection contre les arnaques</li>
+          <li><i data-lucide="check" aria-hidden="true"></i> Démarches en ligne pas à pas</li>
+          <li><i data-lucide="check" aria-hidden="true"></i> Rester connecté à sa famille</li>
+        </ul>
+        <button type="button" class="btn btn--primary btn--block" data-devis data-service="numerique">
+          Demander un devis numérique
+        </button>
+      </article>
+
+      <article class="price reveal">
+        <header class="price__head">
+          <span class="price__icon price__icon--green"><i data-lucide="home" aria-hidden="true"></i></span>
+          <h3 class="price__name">Tâches du quotidien</h3>
+          <p class="price__amount"><span>22</span><em>€/h</em></p>
+        </header>
+        <ul class="price__list">
+          <li><i data-lucide="check" aria-hidden="true"></i> Petits travaux &amp; bricolage</li>
+          <li><i data-lucide="check" aria-hidden="true"></i> Jardinage &amp; extérieur</li>
+          <li><i data-lucide="check" aria-hidden="true"></i> Courses &amp; accompagnement</li>
+          <li><i data-lucide="check" aria-hidden="true"></i> Ménage, garde de domicile, admin</li>
+        </ul>
+        <button type="button" class="btn btn--ghost btn--block" data-devis data-service="quotidien">
+          Demander un devis quotidien
+        </button>
+      </article>
+    </div>
+
+    <aside class="taxnote reveal">
+      <i data-lucide="info" aria-hidden="true"></i>
+      <p>
+        <strong>Crédit d'impôt de 50&nbsp;%</strong> pour les services à
+        domicile&nbsp;: votre coût réel descend à <strong>11&nbsp;€/h</strong>
+        pour le quotidien et <strong>12,50&nbsp;€/h</strong> pour le numérique.
+      </p>
+    </aside>
+  </div>
+</section>
+
+<!-- ─────────────────── COMMENT ÇA SE PASSE ─────────────────── -->
+<section class="section section--soft" id="comment" data-screen-label="Process">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Comment ça se passe</span>
+      <h2 class="h2">Simple, <em>en quatre étapes</em>.</h2>
+      <p class="lede lede--center">
+        Pas de jargon, pas d'engagement. On prend le temps de comprendre
+        ce dont vous avez besoin avant de proposer quoi que ce soit.
+      </p>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__n">01</span>
+        <h3 class="step__title">Vous prenez contact</h3>
+        <p>Par téléphone ou via le formulaire. Dites-nous en quelques mots ce que vous cherchez.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__n">02</span>
+        <h3 class="step__title">Devis gratuit sous 24 h</h3>
+        <p>Un retour clair sur ce que nous pouvons faire et à quel tarif. Sans engagement de votre part.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__n">03</span>
+        <h3 class="step__title">Rendez-vous découverte</h3>
+        <p>Chez vous, à votre rythme. On fait connaissance et on précise ensemble vos besoins.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__n">04</span>
+        <h3 class="step__title">On démarre</h3>
+        <p>Avec un intervenant dédié, des horaires qui vous conviennent, et un suivi régulier.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ─────────────────── CONTACT ─────────────────── -->
+<section class="section" id="contact" data-screen-label="Contact">
+  <div class="container contact__grid">
+    <div class="contact__intro reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 class="h2">Parlons de vos <em>besoins</em>.</h2>
+      <p class="lede">
+        Un devis gratuit sous 24&nbsp;heures. Pas d'engagement, pas de jargon.
+        On vous rappelle quand cela vous convient.
+      </p>
+
+      <ul class="contact__info">
+        <li>
+          <i data-lucide="phone" aria-hidden="true"></i>
+          <div>
+            <span class="contact__lbl">Téléphone</span>
+            <a href="tel:+33648121921">06 48 12 19 21</a>
+          </div>
+        </li>
+        <li>
+          <i data-lucide="mail" aria-hidden="true"></i>
+          <div>
+            <span class="contact__lbl">E-mail</span>
+            <a href="mailto:lucaas35580@icloud.com">lucaas35580@icloud.com</a>
+          </div>
+        </li>
+        <li>
+          <i data-lucide="map-pin" aria-hidden="true"></i>
+          <div>
+            <span class="contact__lbl">Zones desservies</span>
+            <span>Finistère · Ille-et-Vilaine · Morbihan · Côtes-d'Armor</span>
+          </div>
+        </li>
+        <li>
+          <i data-lucide="clock" aria-hidden="true"></i>
+          <div>
+            <span class="contact__lbl">Horaires</span>
+            <span>Lundi – Samedi, 8h – 20h</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <form class="form reveal" id="contactForm" novalidate>
+      <div class="form__row">
+        <label class="field">
+          <span>Prénom</span>
+          <input type="text" name="firstname" required autocomplete="given-name" />
+        </label>
+        <label class="field">
+          <span>Nom</span>
+          <input type="text" name="lastname" required autocomplete="family-name" />
+        </label>
+      </div>
+      <div class="form__row">
+        <label class="field">
+          <span>Téléphone</span>
+          <input type="tel" name="phone" required autocomplete="tel" placeholder="06 …" />
+        </label>
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" name="email" autocomplete="email" placeholder="vous@exemple.fr" />
+        </label>
+      </div>
+      <label class="field">
+        <span>Service souhaité</span>
+        <select name="service" required>
+          <option value="">Choisir un service…</option>
+          <option>Petits travaux &amp; bricolage</option>
+          <option>Jardinage &amp; entretien</option>
+          <option>Courses &amp; accompagnement</option>
+          <option>Nettoyage &amp; ménage</option>
+          <option>Garde de domicile</option>
+          <option>Aide administrative</option>
+          <option>Accompagnement numérique</option>
+          <option>Plusieurs services</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Ville / département</span>
+        <select name="zone" required>
+          <option value="">Choisir une zone…</option>
+          <optgroup label="Finistère (29)">
+            <option>Quimper</option><option>Brest</option><option>Morlaix</option><option>Concarneau</option>
+          </optgroup>
+          <optgroup label="Ille-et-Vilaine (35)">
+            <option>Rennes</option><option>Saint-Malo</option><option>Fougères</option><option>Vitré</option><option>Redon</option>
+          </optgroup>
+          <optgroup label="Morbihan (56)">
+            <option>Vannes</option><option>Lorient</option><option>Auray</option><option>Pontivy</option>
+          </optgroup>
+          <optgroup label="Côtes-d'Armor (22)">
+            <option>Saint-Brieuc</option><option>Lannion</option><option>Dinan</option><option>Guingamp</option>
+          </optgroup>
+        </select>
+      </label>
+      <label class="field">
+        <span>Votre message</span>
+        <textarea name="message" rows="5" placeholder="Décrivez en quelques mots ce dont vous avez besoin…"></textarea>
+      </label>
+
+      <button type="submit" class="btn btn--primary btn--lg btn--block">
+        Envoyer ma demande
+        <i data-lucide="send" aria-hidden="true"></i>
+      </button>
+      <p class="form__legal">
+        En envoyant ce formulaire, vous acceptez d'être recontacté·e.
+        Vos données restent confidentielles.
+      </p>
+
+      <div class="form__success" id="formSuccess" hidden>
+        <i data-lucide="check-circle-2" aria-hidden="true"></i>
+        <div>
+          <strong>Merci, votre demande est partie !</strong>
+          <p>Nous vous rappelons sous 24&nbsp;heures, jour ouvré.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ─────────────────── FOOTER ─────────────────── -->
+<footer class="footer" data-screen-label="Footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <img src="assets/logo-tiez-aide.png" alt="Tiez Aide" class="logo logo--mark logo--footer" />
+      <p class="footer__slogan">Votre maison, notre priorité.</p>
+      <p class="footer__zones">
+        <i data-lucide="map-pin" aria-hidden="true"></i>
+        Finistère · Ille-et-Vilaine · Morbihan · Côtes-d'Armor
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Petits travaux</a></li>
+        <li><a href="#services">Jardinage</a></li>
+        <li><a href="#services">Ménage</a></li>
+        <li><a href="#services">Courses</a></li>
+        <li><a href="#services">Garde de domicile</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Numérique</h4>
+      <ul>
+        <li><a href="#numerique">Prise en main</a></li>
+        <li><a href="#numerique">Protection arnaques</a></li>
+        <li><a href="#numerique">Démarches en ligne</a></li>
+        <li><a href="#numerique">Visio &amp; famille</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+33648121921">06 48 12 19 21</a></li>
+        <li><a href="mailto:lucaas35580@icloud.com">lucaas35580@icloud.com</a></li>
+        <li>Lun – Sam · 8h – 20h</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© 2025 Tiez Aide · Tous droits réservés.</span>
+    <nav>
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">CGV</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ─────────────────── DEVIS MODAL ( questionnaire ) ─────────────────── -->
+<div class="modal" id="devisModal" role="dialog" aria-modal="true" aria-labelledby="devisTitle" aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__card" role="document">
+    <header class="modal__head">
+      <ol class="modal__steps" aria-label="Progression">
+        <li class="modal__step is-active" data-step="1"><span>1</span> Service</li>
+        <li class="modal__step" data-step="2"><span>2</span> Zone</li>
+        <li class="modal__step" data-step="3"><span>3</span> Vous</li>
+      </ol>
+      <button type="button" class="modal__close" data-modal-close aria-label="Fermer">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <form class="modal__body" id="devisForm" novalidate>
+
+      <!-- step 1 : service -->
+      <section class="modal__pane is-active" data-pane="1">
+        <h2 class="modal__title" id="devisTitle">De quoi avez-vous besoin&nbsp;?</h2>
+        <p class="modal__lede">Choisissez l'univers qui vous intéresse. Vous pourrez préciser ensuite.</p>
+        <div class="modal__choices">
+          <label class="modal__choice">
+            <input type="radio" name="service" value="numerique" required />
+            <span class="modal__choice-icon"><i data-lucide="smartphone" aria-hidden="true"></i></span>
+            <span class="modal__choice-body">
+              <strong>Accompagnement numérique</strong>
+              <span>Prise en main, arnaques, démarches en ligne, visio avec la famille</span>
+            </span>
+            <i data-lucide="check" class="modal__choice-tick" aria-hidden="true"></i>
+          </label>
+          <label class="modal__choice">
+            <input type="radio" name="service" value="quotidien" />
+            <span class="modal__choice-icon modal__choice-icon--green"><i data-lucide="home" aria-hidden="true"></i></span>
+            <span class="modal__choice-body">
+              <strong>Tâches du quotidien</strong>
+              <span>Bricolage, jardinage, ménage, courses, garde de domicile, admin</span>
+            </span>
+            <i data-lucide="check" class="modal__choice-tick" aria-hidden="true"></i>
+          </label>
+          <label class="modal__choice">
+            <input type="radio" name="service" value="deux" />
+            <span class="modal__choice-icon modal__choice-icon--orange"><i data-lucide="package" aria-hidden="true"></i></span>
+            <span class="modal__choice-body">
+              <strong>Les deux</strong>
+              <span>Un accompagnement numérique <em>et</em> de l'aide au quotidien</span>
+            </span>
+            <i data-lucide="check" class="modal__choice-tick" aria-hidden="true"></i>
+          </label>
+        </div>
+      </section>
+
+      <!-- step 2 : zone -->
+      <section class="modal__pane" data-pane="2">
+        <h2 class="modal__title">Où êtes-vous&nbsp;?</h2>
+        <p class="modal__lede">Nous intervenons partout en Bretagne historique (29 · 35 · 56 · 22).</p>
+        <label class="field">
+          <span>Département &amp; ville</span>
+          <select name="zone" required>
+            <option value="">Choisir votre commune…</option>
+            <optgroup label="Ille-et-Vilaine (35)">
+              <option>Rennes</option><option>Saint-Malo</option><option>Fougères</option><option>Vitré</option><option>Redon</option>
+            </optgroup>
+            <optgroup label="Finistère (29)">
+              <option>Quimper</option><option>Brest</option><option>Morlaix</option><option>Concarneau</option>
+            </optgroup>
+            <optgroup label="Morbihan (56)">
+              <option>Vannes</option><option>Lorient</option><option>Auray</option><option>Pontivy</option>
+            </optgroup>
+            <optgroup label="Côtes-d'Armor (22)">
+              <option>Saint-Brieuc</option><option>Lannion</option><option>Dinan</option><option>Guingamp</option>
+            </optgroup>
+            <option value="autre">Autre commune bretonne</option>
+          </select>
+        </label>
+        <p class="modal__hint">
+          <i data-lucide="map-pin" aria-hidden="true"></i>
+          Si votre commune n'apparaît pas, choisissez « Autre »&nbsp;: nous reviendrons vers vous.
+        </p>
+      </section>
+
+      <!-- step 3 : you -->
+      <section class="modal__pane" data-pane="3">
+        <h2 class="modal__title">Vos coordonnées</h2>
+        <p class="modal__lede">On vous rappelle sous 24&nbsp;heures. Vos données restent confidentielles.</p>
+        <div class="form__row">
+          <label class="field">
+            <span>Prénom</span>
+            <input type="text" name="firstname" required autocomplete="given-name" />
+          </label>
+          <label class="field">
+            <span>Nom</span>
+            <input type="text" name="lastname" required autocomplete="family-name" />
+          </label>
+        </div>
+        <div class="form__row">
+          <label class="field">
+            <span>Téléphone</span>
+            <input type="tel" name="phone" required autocomplete="tel" placeholder="06 …" />
+          </label>
+          <label class="field">
+            <span>E-mail (optionnel)</span>
+            <input type="email" name="email" autocomplete="email" placeholder="vous@exemple.fr" />
+          </label>
+        </div>
+        <label class="field">
+          <span>Une précision&nbsp;? (optionnel)</span>
+          <textarea name="message" rows="3" placeholder="Quand pouvons-nous vous rappeler, ce que vous cherchez en quelques mots…"></textarea>
+        </label>
+      </section>
+
+      <!-- success -->
+      <section class="modal__pane modal__pane--success" data-pane="done">
+        <span class="modal__check"><i data-lucide="check-circle-2" aria-hidden="true"></i></span>
+        <h2 class="modal__title">Merci, c'est noté&nbsp;!</h2>
+        <p class="modal__lede">
+          Nous vous rappelons sous 24&nbsp;heures, jour ouvré.<br />
+          À très bientôt, Lucas.
+        </p>
+        <button type="button" class="btn btn--primary btn--lg" data-modal-close>Fermer</button>
+      </section>
+    </form>
+
+    <footer class="modal__foot">
+      <button type="button" class="btn btn--ghost" data-prev>
+        <i data-lucide="arrow-left" aria-hidden="true"></i> Précédent
+      </button>
+      <button type="button" class="btn btn--primary" data-next>
+        Suivant
+        <i data-lucide="arrow-right" aria-hidden="true"></i>
+      </button>
+      <button type="button" class="btn btn--primary" data-submit hidden>
+        Envoyer ma demande
+        <i data-lucide="send" aria-hidden="true"></i>
+      </button>
+    </footer>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="app.js"></script>
+<script src="tweaks.js"></script>
+</body>
+</html>
