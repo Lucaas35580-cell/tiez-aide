@@ -95,8 +95,16 @@
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
   if (form && success) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+   form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
       success.removeAttribute('hidden');
       if (window.lucide && typeof window.lucide.createIcons === 'function') {
         window.lucide.createIcons();
@@ -105,7 +113,13 @@
         success.setAttribute('hidden', '');
         form.reset();
       }, 4000);
-    });
+    } else {
+      alert('Erreur lors de l\'envoi. Réessayez plus tard.');
+    }
+  } catch (err) {
+    alert('Erreur réseau. Vérifiez votre connexion.');
+  }
+});
   }
   // ── Devis modal (questionnaire) ─────────────────────────
   const modal = document.getElementById('devisModal');
@@ -213,7 +227,25 @@
       modal.querySelector('.modal__pane[data-pane="done"]').classList.add('is-active');
       foot.setAttribute('hidden', '');
     });
-    form?.addEventListener('submit', (e) => { e.preventDefault(); btnSub?.click(); });
+   form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (!validateStep()) return;
+  const data = new FormData(form);
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      btnSub?.click();
+    } else {
+      alert('Erreur lors de l\'envoi. Réessayez plus tard.');
+    }
+  } catch (err) {
+    alert('Erreur réseau. Vérifiez votre connexion.');
+  }
+});
 
     /* triggers */
     document.querySelectorAll('[data-devis]').forEach(btn => {
