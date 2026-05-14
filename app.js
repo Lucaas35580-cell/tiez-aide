@@ -218,15 +218,30 @@
     btnPrev?.addEventListener('click', () => {
       if (step > 1) { step--; showStep(); }
     });
-    btnSub?.addEventListener('click', () => {
-      if (!validateStep()) return;
-      step = TOTAL + 1; /* sentinel for success */
-      /* mark all step pills as done */
-      stepEls.forEach(el => { el.classList.remove('is-active'); el.classList.add('is-done'); });
-      panes.forEach(p => p.classList.remove('is-active'));
-      modal.querySelector('.modal__pane[data-pane="done"]').classList.add('is-active');
-      foot.setAttribute('hidden', '');
+   btnSub?.addEventListener('click', async () => {
+  if (!validateStep()) return;
+  const data = new FormData(form);
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
     });
+    if (!response.ok) {
+      alert('Erreur lors de l\'envoi. Réessayez plus tard.');
+      return;
+    }
+  } catch (err) {
+    alert('Erreur réseau. Vérifiez votre connexion.');
+    return;
+  }
+  step = TOTAL + 1;
+  /* mark all step pills as done */
+  stepEls.forEach(el => { el.classList.remove('is-active'); el.classList.add('is-done'); });
+  panes.forEach(p => p.classList.remove('is-active'));
+  modal.querySelector('.modal__pane[data-pane="done"]').classList.add('is-active');
+  foot.setAttribute('hidden', '');
+});
    form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!validateStep()) return;
